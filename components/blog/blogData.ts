@@ -62,5 +62,50 @@ export const blogs: BlogPost[] = [
     author: 'Pankaj Vashisht',
     category: 'Guides',
     content: `## The Modern Stack\n\nGreta + Supabase is the ultimate power duo for 2026. \n\n### Automated RLS & Auth\nGreta understands Supabase schemas and can automatically generate secure RLS policies and auth flows for your application.`
+  },
+  {
+    slug: 'greta-vs-v0-from-ui-to-full-stack',
+    title: 'Greta vs v0.dev: Transitioning from UI to Full-Stack',
+    excerpt: 'v0 is great for UI, but Greta builds the logic. See why Greta is the choice for functional AI applications.',
+    date: 'Jan 25, 2026',
+    author: 'Pankaj Vashisht',
+    category: 'Comparisons',
+    content: `## Logic vs. Layout\n\nv0.dev has changed how we think about UI, but Greta changes how we think about apps. While v0 gives you the component, Greta gives you the **action**.\n\n### The Greta Advantage\nGreta handles state management, API integrations, and backend logic that static UI generators simply can't touch.`
+  },
+  {
+    slug: 'scaling-ai-startups-with-greta',
+    title: 'Scaling AI Startups: The Vibe Coding Way',
+    excerpt: 'How to use Greta to scale your startup from 1 to 100 users without expanding your dev team.',
+    date: 'Jan 25, 2026',
+    author: 'Pankaj Vashisht',
+    category: 'Startups',
+    content: `## Scaling Small\n\nIn 2026, you don't need a team of 10 to scale. You need one solid engineer and Greta. Greta allows you to maintain your "vibe" while ensuring your infrastructure is production-ready.`
+  },
+  {
+    slug: 'growth-engineering-with-greta',
+    title: 'Growth Engineering: The Hidden Power of Greta',
+    excerpt: 'Greta isn\'t just a builder; it\'s a growth engine. Learn how to automate your marketing and sales funnels.',
+    date: 'Jan 24, 2026',
+    author: 'Pankaj Vashisht',
+    category: 'Technology',
+    content: `## Engineering Growth\n\nGreta (Growth Engineering Tech Agent) was built with one goal: conversion. Every component Greta builds is optimized for speed and user actions.`
+  },
+  {
+    slug: 'automating-deployments-with-greta-and-netlify',
+    title: 'Automating Deployments: From Prompt to Netlify in Seconds',
+    excerpt: 'How Greta handles the plumbing of CI/CD so you can focus on shipping features.',
+    date: 'Jan 24, 2026',
+    author: 'Pankaj Vashisht',
+    category: 'Guides',
+    content: `## Zero-Config Hosting\n\nDeploying used to be the hardest part of a project. With Greta, it's a single click. \n\n### Continuous Delivery\nGreta integrates with Netlify and GitHub to ensure that every "vibe" you commit is automatically tested and deployed to production.`
+  },
+  {
+    slug: 'why-founding-engineers-love-vibe-coding',
+    title: 'Why Founding Engineers Love Vibe Coding',
+    excerpt: 'The psychological shift from writing lines of code to directing systems of logic.',
+    date: 'Jan 23, 2026',
+    author: 'Pankaj Vashisht',
+    category: 'Productivity',
+    content: `## The New Engineering Paradigm\n\nFounding engineers don't have time to be code monkeys. Vibe coding allows them to act as architects. \n\n### Cognitive Load Reduction\nGreta manages the syntax while the human manages the strategy. This partnership is what lets a single engineer build what used to require an entire department.`
   }
 ];
