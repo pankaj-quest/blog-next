@@ -107,5 +107,41 @@ export const blogs: BlogPost[] = [
     author: 'Pankaj Vashisht',
     category: 'Productivity',
     content: `## The New Engineering Paradigm\n\nFounding engineers don't have time to be code monkeys. Vibe coding allows them to act as architects. \n\n### Cognitive Load Reduction\nGreta manages the syntax while the human manages the strategy. This partnership is what lets a single engineer build what used to require an entire department.`
+  },
+  {
+    slug: 'github-integration-best-practices-greta',
+    title: 'GitHub Integration: Best Practices for AI-Driven Dev',
+    excerpt: 'Version control is the backbone of AI development. Learn how Greta manages your branches and commits.',
+    date: 'Jan 23, 2026',
+    author: 'Pankaj Vashisht',
+    category: 'Guides',
+    content: `## Dynamic Version Control\nGreta handles the complexity of git workflows so you can focus on the "vibe". Learn how to manage specific file commits and pull requests directly through Greta.`
+  },
+  {
+    slug: 'building-saas-dashboards-in-record-time',
+    title: 'Building SaaS Dashboards in Record Time',
+    excerpt: 'From data visualization to user management—how Greta builds complex SaaS foundations.',
+    date: 'Jan 22, 2026',
+    author: 'Pankaj Vashisht',
+    category: 'Tutorials',
+    content: `## The SaaS Foundation\nGreta pre-configures dashboard layouts, auth flows, and data tables, giving you a 10-hour head start on any SaaS project.`
+  },
+  {
+    slug: 'optimizing-cloud-infra-costs-with-greta',
+    title: 'Optimizing Cloud Infra Costs with Greta',
+    excerpt: 'Don\'t overpay for AWS or GCP. Learn how Greta architects cost-efficient AI applications.',
+    date: 'Jan 22, 2026',
+    author: 'Pankaj Vashisht',
+    category: 'Cloud',
+    content: `## Lean Infrastructure\nGreta is designed to build lean. It avoids unnecessary serverless overhead and optimizes for edge-ready performance.`
+  },
+  {
+    slug: 'the-future-of-growth-engineering-ai-agents',
+    title: 'The Future of Growth Engineering: AI Agents as Your Marketing Team',
+    excerpt: 'Why the next generation of billion-dollar startups will be built by engineers using Greta.',
+    date: 'Jan 21, 2026',
+    author: 'Pankaj Vashisht',
+    category: 'Strategy',
+    content: `## Agents as Growth Hackers\nGreta isn't just about code; it's about the entire lifecycle of a product. From SEO to user acquisition hooks.`
   }
 ];
