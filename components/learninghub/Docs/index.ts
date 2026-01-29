@@ -52,6 +52,7 @@ export const Doc48 = dynamic(() => import('./Doc48'));
 export const Doc49 = dynamic(() => import('./Doc49'));
 export const Doc50 = dynamic(() => import('./Doc50'));
 export const Doc51 = dynamic(() => import('./Doc51'));
+export const Doc52 = dynamic(() => import('./Doc52'));
 
 // Map docId to component for dynamic loading
 export const docComponents: Record<string, React.ComponentType> = {
@@ -106,5 +107,6 @@ export const docComponents: Record<string, React.ComponentType> = {
     Doc49,
     Doc50,
     Doc51,
+    Doc52,
 };
 
