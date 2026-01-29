@@ -3,29 +3,18 @@
 import Image from 'next/image';
 
 export const Topbar = ({ text }: { text: string }) => {
-    return ( 
-
-        <></>
-        // <div className="px-6 py-4 text-sm leading-5 border-b flex items-center gap-2 absolute z-[1000] top-0 w-full text-[#E0E0E0] border-b-[#2D2D2D] bg-[#0D0D0D]">
-        //     <div className="w-fit h-fit cursor-pointer" onClick={() => window.history.back()}>
-        //         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        //             <path d="M19 12H5M12 19l-7-7 7-7" />
-        //         </svg>
-        //     </div>
-        //     <p>{text}</p>
-        // </div>
-    );
+    return <></>;
 };
 
 export const Creator = ({ children }: { children: React.ReactNode; tableOfContent?: string[] }) => {
-    return <div className="doc-creator-root">{children}</div>;
+    return <div className="doc-creator-root space-y-0">{children}</div>;
 };
 
 export const HeroHeader = ({ text }: { text: string }) => {
     const id = text ? text.toLowerCase().trim().split(' ').join('-') : '';
     return (
         <h1
-            className="text-[36px] font-semibold leading-[44px] font-[Figtree] -tracking-[0.72px] text-white"
+            className="text-[2.5rem] md:text-[2.75rem] font-bold leading-[1.2] tracking-tight text-zinc-900 dark:text-white mb-2"
             data-section-id={id}
             id={id}
         >
@@ -39,10 +28,11 @@ export const Heading1 = ({ children, className, text }: { children: React.ReactN
     const id = content ? content.toLowerCase().trim().split(' ').join('-') : '';
     return (
         <h2
-            className={`${className || ''} text-[24px] font-semibold leading-[32px] font-[Figtree] -tracking-[0.48px] mt-[32px] text-[#E0E0E0]`}
+            className={`${className || ''} text-[1.5rem] font-semibold leading-[1.3] tracking-tight mt-12 mb-4 text-zinc-800 dark:text-zinc-100 flex items-center gap-3 group`}
             data-section-id={id}
             id={id}
         >
+            <span className="w-1 h-6 bg-gradient-to-b from-violet-500 to-blue-500 rounded-full opacity-80"></span>
             {children}
         </h2>
     );
@@ -52,99 +42,112 @@ export const Heading2 = ({ children, className, text }: { children: React.ReactN
     const content = typeof children === 'string' ? children : text || '';
     const id = content ? content.toLowerCase().trim().split(' ').join('-') : '';
     return (
-        <h2
-            className={`${className || ''} text-[16px] font-semibold leading-[24px] font-[Figtree] mt-[24px] text-[#E0E0E0]`}
+        <h3
+            className={`${className || ''} text-[1.125rem] font-semibold leading-[1.4] mt-8 mb-3 text-zinc-700 dark:text-zinc-200`}
             data-section-id={id}
             id={id}
         >
             {children}
-        </h2>
+        </h3>
     );
 };
 
 export const Content1 = ({ children, className }: { children: React.ReactNode; className?: string }) => {
     return (
-        <div className={`text-[16px] font-normal leading-[24px] font-[Figtree] mt-3 childAnchor text-[#B0B0B0] ${className || ''}`}>
+        <p className={`text-[1rem] leading-[1.75] mt-4 text-zinc-600 dark:text-zinc-400 ${className || ''}`}>
             {children}
-        </div>
+        </p>
     );
 };
 
 export const Content2 = ({ children, className }: { children: React.ReactNode; className?: string }) => {
     return (
-        <div className={`text-[16px] font-normal leading-[24px] font-[Figtree] mt-2 childAnchor text-[#B0B0B0] ${className || ''}`}>
+        <p className={`text-[1rem] leading-[1.75] mt-3 text-zinc-600 dark:text-zinc-400 ${className || ''}`}>
             {children}
-        </div>
+        </p>
     );
 };
 
 type ListDataType = React.ReactNode[] | Record<string, string>;
 
 export const ListContent = ({ listData, style, listType = 'ul' }: { listData: ListDataType; style?: React.CSSProperties; listType?: 'ul' | 'ol' }) => {
-    const textColor = 'text-[#B0B0B0]';
-
     const renderList = () => {
         if (Array.isArray(listData)) {
             return listData.map((ele, index) => (
-                <li className={`${textColor} font-dm-sans text-[16px] font-normal leading-[24px] childAnchor`} style={style} key={index}>
+                <li
+                    className="text-[1rem] leading-[1.75] text-zinc-600 dark:text-zinc-400 pl-2"
+                    style={style}
+                    key={index}
+                >
                     {ele}
                 </li>
             ));
         }
         return Object.keys(listData).map((ele, index) => (
-            <li className={`${textColor} mt-3`} style={style} key={index}>
-                <h4 className={`${textColor} font-dm-sans text-[16px] font-medium leading-[24px] childAnchor`}>{ele}: </h4>
-                <p className={`${textColor} font-dm-sans text-[16px] font-normal leading-[24px] childAnchor whitespace-pre-line mt-1.5`}>
-                    {listData[ele]}
-                </p>
+            <li className="mt-4 pl-2" style={style} key={index}>
+                <span className="font-semibold text-zinc-800 dark:text-zinc-200">{ele}:</span>
+                <span className="text-zinc-600 dark:text-zinc-400 ml-1">{listData[ele]}</span>
             </li>
         ));
     };
 
-    return listType === 'ul' ? (
-        <ul className={`list-disc ml-6 mt-3 text-[#B0B0B0] space-y-2`} style={style}>
+    const listClasses = listType === 'ul'
+        ? "list-disc marker:text-violet-500 dark:marker:text-violet-400"
+        : "list-decimal marker:text-violet-500 dark:marker:text-violet-400";
+
+    return (
+        <ul className={`${listClasses} ml-6 mt-4 space-y-3`} style={style}>
             {renderList()}
         </ul>
-    ) : (
-        <ol className="list-decimal ml-6 mt-3 space-y-2" style={style}>
-            {renderList()}
-        </ol>
     );
 };
 
 export const ImageContent = ({ img, altText, style }: { img: string; altText: string; style?: React.CSSProperties }) => {
     return (
-        <div className="relative w-full aspect-video mt-5 overflow-hidden rounded-2xl border border-white/10">
-            <img
-                src={img}
-                alt={altText}
-                className="w-full h-full object-cover"
-                style={style}
-                loading="lazy"
-            />
-        </div>
+        <figure className="relative w-full mt-6 mb-2 group">
+            <div className="relative overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <img
+                    src={img}
+                    alt={altText}
+                    className="w-full h-auto object-cover"
+                    style={style}
+                    loading="lazy"
+                />
+                {/* Subtle gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+            </div>
+        </figure>
     );
 };
 
 export const TableContent = ({ columns, data }: { columns: string[]; data: Record<string, string>[] }) => {
     return (
-        <div className="overflow-x-auto mt-6 mb-6">
-            <table className="min-w-full border-collapse border-[#2D2D2D]">
+        <div className="overflow-x-auto mt-6 mb-6 rounded-xl border border-zinc-200 dark:border-zinc-800">
+            <table className="min-w-full">
                 <thead>
-                    <tr className="bg-[#1A1A1A]">
+                    <tr className="bg-zinc-50 dark:bg-zinc-900/50 border-b border-zinc-200 dark:border-zinc-800">
                         {columns.map((column, index) => (
-                            <th key={index} className="border py-3 px-4 text-left font-semibold text-[14px] border-[#2D2D2D] text-[#E0E0E0]">
+                            <th
+                                key={index}
+                                className="py-3.5 px-4 text-left text-[0.8125rem] font-semibold uppercase tracking-wider text-zinc-600 dark:text-zinc-400"
+                            >
                                 {column}
                             </th>
                         ))}
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className="divide-y divide-zinc-200 dark:divide-zinc-800">
                     {data.map((row, rowIndex) => (
-                        <tr key={rowIndex} className="hover:bg-[#1A1A1A]">
+                        <tr
+                            key={rowIndex}
+                            className="hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-colors"
+                        >
                             {columns.map((column, colIndex) => (
-                                <td key={colIndex} className="border py-3 px-4 text-[14px] border-[#2D2D2D] text-[#B0B0B0]">
-                                    {row[column] || '-'}
+                                <td
+                                    key={colIndex}
+                                    className="py-3.5 px-4 text-[0.9375rem] text-zinc-700 dark:text-zinc-300"
+                                >
+                                    {row[column] || '—'}
                                 </td>
                             ))}
                         </tr>

@@ -1,26 +1,156 @@
 @import "tailwindcss";
 
+/* Enable class-based dark mode for Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
+  --background: #fafafa;
   --foreground: #171717;
+  --accent: #7c3aed;
+  --accent-light: #a78bfa;
+  --border: #e5e7eb;
+  --muted: #6b7280;
+  --card: #ffffff;
+  --card-hover: #f9fafb;
+}
+
+.dark {
+  --background: #09090b;
+  --foreground: #fafafa;
+  --accent: #a78bfa;
+  --accent-light: #c4b5fd;
+  --border: #27272a;
+  --muted: #a1a1aa;
+  --card: #18181b;
+  --card-hover: #1f1f23;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-figtree), system-ui, sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Base styles */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Premium scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Hide scrollbar for specific elements */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Premium link styles */
+.doc-content a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.doc-content a:hover {
+  border-bottom-color: var(--accent);
+}
+
+/* Premium code inline */
+.doc-content code:not(pre code) {
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  padding: 0.15em 0.4em;
+  border-radius: 6px;
+  font-size: 0.875em;
+  font-weight: 500;
+  color: #1f2937;
+  border: 1px solid #e5e7eb;
+}
+
+.dark .doc-content code:not(pre code) {
+  background: linear-gradient(135deg, #27272a 0%, #1f1f23 100%);
+  color: #e4e4e7;
+  border-color: #3f3f46;
+}
+
+/* Premium code blocks */
+.doc-content pre {
+  background: linear-gradient(180deg, #1e1e2e 0%, #181825 100%);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  border: 1px solid #313244;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.doc-content pre code {
+  background: none;
+  padding: 0;
+  border: none;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: #cdd6f4;
+}
+
+/* Premium strong/bold text */
+.doc-content strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+.dark .doc-content strong {
+  color: #fafafa;
+}
+
+/* Premium selection */
+::selection {
+  background: rgba(124, 58, 237, 0.2);
+  color: inherit;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Premium focus states */
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
