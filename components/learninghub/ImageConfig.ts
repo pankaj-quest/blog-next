@@ -232,5 +232,6 @@ export const imageConfig = {
     Doc51Image39: `${basePath}/Doc51Image39.png`,
     Doc51Image40: `${basePath}/Doc51Image40.png`,
     Doc51Image41: `${basePath}/Doc51Image41.png`,
+    Doc52Banner: `${basePath}/Doc26Banner.png`,
 };
 

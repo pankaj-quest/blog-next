@@ -413,10 +413,17 @@ export const data: DocCategory[] = [
             },
             {
                 question: "How can I get involved with the Greta community and access learning resources?",
-                description: "Learn how to get involved with the Greta community and access learning resources.",
+                description: "Learn how to access learning resources and engage with the community.",
                 link: "/learninghub/greta-community",
                 docId: "Doc47",
                 banner: imageConfig.Doc47Banner
+            },
+            {
+                question: "Greta vs Rocket.new and how Greta is better?",
+                description: "Compare Greta and Rocket.new to see why Greta stands out for long-term growth.",
+                link: "/learninghub/greta-vs-rocket-new",
+                docId: "Doc52",
+                banner: imageConfig.Doc52Banner
             }
         ]
     }
